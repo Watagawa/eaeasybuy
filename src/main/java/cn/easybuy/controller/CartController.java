@@ -109,7 +109,7 @@ public class CartController {
      * 修改购物车商品数量
      */
     @RequestMapping("modCart")
-    //修改购物车商品数量
+    @ResponseBody
     public ReturnResult mod(
             @RequestParam("entityId") Integer entityId
             , @RequestParam("quantity") Integer quantity
@@ -187,7 +187,7 @@ public class CartController {
 
         UserAddress address;
 
-        if (newAddress != null && newRemark != null) {
+        if (newAddress != null && newRemark != null && newAddress.length() > 1 && newRemark.length() > 1) {
             address = new UserAddress();
             address.setUserId(user.getId());
             address.setAddress(newAddress);
@@ -196,6 +196,7 @@ public class CartController {
             userAddressService.add(address);
         } else
             address = userAddressService.getUserAddressById(addressId);
+        System.out.println(address.getAddress());
         Order order = orderService.payShoppingCart(cart, user, address.getAddress());
         cart.items.clear();
         model.addAttribute("currentOrder", order);

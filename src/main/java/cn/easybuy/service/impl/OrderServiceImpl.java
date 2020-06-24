@@ -14,8 +14,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,10 +59,11 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         order.setLoginName(user.getLoginName());
         order.setUserId(user.getId());
         order.setCost(cart.getSum().floatValue());
-        baseMapper.insert(order);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
         String strDate = dtf.format(LocalDateTime.now());
+        order.setCreateTime(new Date());
         order.setSerialNumber(strDate);
+        baseMapper.insert(order);
         cart.items.forEach(item -> {
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.setOrderId(order.getId());
