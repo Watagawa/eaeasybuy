@@ -196,7 +196,6 @@ public class CartController {
             userAddressService.add(address);
         } else
             address = userAddressService.getUserAddressById(addressId);
-        System.out.println(address.getAddress());
         Order order = orderService.payShoppingCart(cart, user, address.getAddress());
         cart.items.clear();
         model.addAttribute("currentOrder", order);

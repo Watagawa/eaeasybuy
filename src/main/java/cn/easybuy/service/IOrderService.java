@@ -1,7 +1,6 @@
 package cn.easybuy.service;
 
 import cn.easybuy.pojo.Order;
-import cn.easybuy.pojo.OrderDetail;
 import cn.easybuy.pojo.User;
 import cn.easybuy.utils.ShoppingCart;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -13,7 +12,7 @@ import java.util.List;
  * 订单服务类
  * </p>
  *
- * @author 贺宗
+ * @author 贺宗 and 黄嘉豪
  * @since 2020-06-21
  */
 public interface IOrderService extends IService<Order> {

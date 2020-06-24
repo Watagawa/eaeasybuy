@@ -30,7 +30,7 @@ public interface IProductCategoryService extends IService<ProductCategory> {
     public boolean update(ProductCategory productCategory);
 
     /**
-     * 根据条件查询商品列表
+     * 根据条件查询商品分类列表
      */
     public List<ProductCategory> queryProductCategoryList(int from, int len);
 
@@ -40,12 +40,12 @@ public interface IProductCategoryService extends IService<ProductCategory> {
     public ProductCategory queryProductCategoryById(int id);
 
     /**
-     * 根据属性查询
+     * 根据属性查询商品分类
      */
     public List<ProductCategory> queryProductCategoryListByType(int type);
 
     /**
-     * 根据parentId查询
+     * 根据parentId查询商品分类
      */
     public List<ProductCategory> queryProductCategoryListByParentId(int parentId, int type);
 

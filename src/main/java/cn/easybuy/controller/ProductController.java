@@ -2,12 +2,10 @@ package cn.easybuy.controller;
 
 
 import cn.easybuy.pojo.Product;
-import cn.easybuy.pojo.ProductCategory;
 import cn.easybuy.service.IProductCategoryService;
 import cn.easybuy.service.IProductService;
 import cn.easybuy.utils.Pager;
 import cn.easybuy.utils.ReturnResult;
-import org.apache.velocity.shaded.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +22,6 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.UUID;
 
 
 /**
